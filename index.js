@@ -701,6 +701,6 @@ client.init();
 const http = require('http');
 const server = http.createServer((req, res) => {
   res.writeHead(200);
-  res.end('Hi There.... Contact me on Discord 𝙎𝙥𝙚𝙚𝙙𝙮#2942');
+  res.end('Hi There.... Want to Contact the developers ? DM us on Discord (𝙎𝙥𝙚𝙚𝙙𝙮#2942 or кιzυяαѕg#6612)');
 });
 server.listen(3000);
