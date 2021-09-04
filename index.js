@@ -42,7 +42,7 @@ const hiz  = ["https://cdn.discordapp.com/attachments/805999578687471616/8073020
 // Dont mess below
 client.on('ready', () => {
   console.log(`# Logged in as ${client.user.tag}!`);
-  client.user.setActivity(`this! | !helpme`, { type: 'WATCHING', url: "https://open.spotify.com/playlist/6Q4ArkuNzSGI49GX4RlWxd?si=0XKQElCfS5WQ-SqO7ndrgQ" } );
+  client.user.setActivity(`Haechan (Smile)`, { type: 'WATCHING', url: "https://open.spotify.com/playlist/6Q4ArkuNzSGI49GX4RlWxd?si=0XKQElCfS5WQ-SqO7ndrgQ" } );
 });
 
 client.on("guildCreate", async guild => {
@@ -234,7 +234,7 @@ client.on("message", async message => {
     message.delete().catch(O_o=>{}); 
     message.author.send(`Heya ${message.author}!`, {
       "embed": {"title": "List of Commands", "description": "List of Commands to use the '𝙂𝙞𝙙𝙚𝙤𝙣 (𝙄𝙄𝙏-𝟮𝟭)' Bot! Enjoy!", "color": 16758784,"timestamp": message.createdAt, "image": {
-          "url": "https://cdn.discordapp.com/attachments/832805651309789194/832833919920504882/FINAL.gif" // <===image Link here
+          "url": "https://cdn.discordapp.com/attachments/832805651309789194/883630598349029406/jrm.png" // <===image Link here
         },
         "fields": [
           {"name": "!helpme",       "value": "You already know how this works!"},
