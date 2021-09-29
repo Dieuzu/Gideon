@@ -7,6 +7,13 @@ exports.cmdls = async function (message, msg, speedy, console, kizura , supress)
         supress(msg)}
     }
 
+    if (msg.startsWith("sukama")) { // look into this later
+        message.delete().catch(O_o=>{}); 
+        console.log(`# ryujin is thinking of ${speedy}!`)
+        if (!message.mentions.members.first()) {const msg = await message.channel.send(`***${message.member.displayName} is smiling!***`, {embed: {color: 16758784, image: {url: "https://cdn.discordapp.com/attachments/890938405502976010/892787571971751966/E1hBBfgVEAcv9iN.jpg"}}})
+        supress(msg)}
+    }
+
     if (msg.startsWith("allgood")) { // look into this later
         message.delete().catch(O_o=>{}); 
         //console.log(`# ${message.author.username} thinks this is also fine`)
