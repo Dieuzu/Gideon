@@ -10,7 +10,7 @@ exports.cmdls = async function (message, msg, speedy, console, kizura , supress)
     if (msg.startsWith("sukama")) { // look into this later
         message.delete().catch(O_o=>{}); 
         console.log(`# ryujin is thinking of ${speedy}!`)
-        if (!message.mentions.members.first()) {const msg = await message.channel.send(`***${message.member.displayName} is smiling!***`, {embed: {color: 16758784, image: {url: "https://cdn.discordapp.com/attachments/890938405502976010/892787571971751966/E1hBBfgVEAcv9iN.jpg"}}})
+        if (!message.mentions.members.first()) {const msg = await message.channel.send(`***ryujin is thinking of ${message.member.displayName} and smiling!***`, {embed: {color: 16758784, image: {url: "https://cdn.discordapp.com/attachments/890938405502976010/892787571971751966/E1hBBfgVEAcv9iN.jpg"}}})
         supress(msg)}
     }
 
