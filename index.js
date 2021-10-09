@@ -32,7 +32,7 @@ var testS = require('./test.js');                //
 const { ReactionRole } = require("reaction-role");
 const Discord = require("discord.js");
 const client =  new ReactionRole();
-const version = '3.0.0';
+const version = '3.0.1';
 const readline = require('readline');
 //------------------------------------------------------ People Constants
 const creator = '𝙎𝙥𝙚𝙚𝙙𝙮#2942 & кιzυяαѕg#6612'
