@@ -1,26 +1,31 @@
 require('dotenv').config();
 //------------------------------------------------------ All Modules!
-var killc = require('./kill.js');       //
-var adminc = require('./admin.js');     //
-var act = require('./bootactivity.js'); //
-var greet = require('./greetings.js');  //
-var rpcl = require('./cmdless.js');     //
-var hm = require('./helpme.js');        //
-var ver = require('./version.js');      //
-var bs = require('./activity.js');      //
-var rp = require('./roleplay.js');      //
-var dmc = require('./dmchat.js');       //
-var rc = require('./rolecmds.js');      //
-var rr = require('./reactionroles.js'); //
-var sc = require('./chatter.js');       //
-var crp = require('./customRPs.js');    //
-var game = require('./games.js');       //
-var wcum = require('./welcomeMsg.js');  //
-var gc = require('./guildCount.js');    //
-var gdm = require('./dm.js');           //
-var rt = require('./reactTask.js');       //
-var tcmd = require('./taskCmd.js');       //
-var testS = require('./test.js');       //
+//commands folder
+var killc = require('./Commands/kill.js');       //
+var adminc = require('./Commands/admin.js');     //
+var hm = require('./Commands/helpme.js');        //
+var ver = require('./Commands/version.js');      //
+var bs = require('./Commands/activity.js');      //
+var rp = require('./Commands/roleplay.js');      //
+var rc = require('./Commands/rolecmds.js');      //
+var crp = require('./Commands/customRPs.js');    //
+var game = require('./Commands/games.js');       //
+var gdm = require('./Commands/dm.js');           //
+var tcmd = require('./Commands/taskCmd.js');     //
+
+//boot folder
+var dmc = require('./Boot/dmchat.js');           //
+var act = require('./Boot/bootactivity.js');     //
+var greet = require('./Boot/greetings.js');      //
+var rpcl = require('./Boot/cmdless.js');         //
+var rr = require('./Boot/reactionroles.js');     //
+var sc = require('./Boot/chatter.js');           //
+var wcum = require('./Boot/welcomeMsg.js');      //
+var gc = require('./Boot/guildCount.js');        //
+var rt = require('./Boot/reactTask.js');         //
+
+//Test Space
+var testS = require('./test.js');                //
 
 
 //------------------------------------------------------ Constants
@@ -117,9 +122,9 @@ client.on("message", async message => {
 client.init();
 // Below to keep it online ! ================ DONT MESS ! ================
 const http = require('http');
-const { botStatus } = require('./activity.js');
-const { dmChats } = require('./dmchat.js');
-const { Gcunt } = require('./guildCount.js');
+const { botStatus } = require('./Commands/activity.js');
+const { dmChats } = require('./Boot/dmchat.js');
+const { Gcunt } = require('./Boot/guildCount.js');
 const server = http.createServer((req, res) => {
   res.writeHead(200);
   res.end('Hi There.... Want to Contact the developers ? DM us on Discord (𝙎𝙥𝙚𝙚𝙙𝙮#2942 or кιzυяαѕg#6612)');
