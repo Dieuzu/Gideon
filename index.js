@@ -18,11 +18,14 @@ var game = require('./games.js');       //
 var wcum = require('./welcomeMsg.js');  //
 var gc = require('./guildCount.js');    //
 var gdm = require('./dm.js');           //
+var rt = require('./reactTask.js');       //
+var tcmd = require('./taskCmd.js');       //
 var testS = require('./test.js');       //
 
 
 //------------------------------------------------------ Constants
 const { ReactionRole } = require("reaction-role");
+const Discord = require("discord.js");
 const client =  new ReactionRole();
 const version = '3.0.0';
 const readline = require('readline');
@@ -40,6 +43,7 @@ let members = 0;
 let activity = []  ;                  // Initialize activity here, add content after client ready.
 let c = 0 ;                           // part of the "there it goes again code"
 let DMActive = new Array();
+let taskLog = [], taskSign = [], taskComp = [];
 //------------------------------------------------------
 act.bootActives(client, console, guildcount, members, activity); //bootactivity.js
 
@@ -48,6 +52,8 @@ gc.Gcunt(client, console, guildcount, members, activity);
 rr.reactionRole(client);
 
 wcum.Welcum(client, console);
+
+rt.reactTask(client, taskLog, taskSign, taskComp);
 //------------------------------------------------------ Functions
 function random(x) {
   return Math.floor(Math.random() * x);
@@ -97,6 +103,8 @@ client.on("message", async message => {
   crp.cusRP(command, message, args, console, supress, speedy, kizura);
 
   game.miniGames (command, args, message, console, speedy, kizura);
+
+  tcmd.taskCmd(command, message, console, args, Discord, taskLog);
   
   killc.kill(command, args, message, speedy, console);
   
