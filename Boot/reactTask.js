@@ -10,7 +10,7 @@ exports.reactTask = async function (client, taskLog, taskSign, taskComp) {
 
       let embed = taskLog[message.id];
       if (ej.name == '✋') {
-          if (taskSign[message.id + "" + user.id]) return message.channel.send(`You're already signed up, ${user}!`);
+          if (taskSign[message.id + "" + user.id]) return message.guild.member(user).send(`You're already signed up for this task, ${user}!`);
           taskSign[message.id + "" + user.id] = user.id;
           if (!embed.description.includes("Signed up:")) {
           embed.setDescription(`${embed.description}\nSigned up:\n> ${user.username}`)
@@ -29,8 +29,8 @@ exports.reactTask = async function (client, taskLog, taskSign, taskComp) {
       }
 
       if (ej.name == '✅') {
-          if (!taskSign[message.id + "" + user.id]) return message.channel.send(`You need to sign up first, ${user}!`);
-          if (taskComp[message.id + "" + user.id]) return message.channel.send(`You have already completed, ${user}!`);
+          if (!taskSign[message.id + "" + user.id]) return message.guild.member(user).send(`You need to sign up for this task first, ${user}!`);
+          if (taskComp[message.id + "" + user.id]) return message.guild.member(user).send(`You have already completed this task, ${user}!`);
           taskComp[message.id + "" + user.id] = user.id;
           if (!embed.description.includes("Completed:")) {
           embed.setDescription(`${embed.description}\nCompleted:\n> ${user.username}`)
