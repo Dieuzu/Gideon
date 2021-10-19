@@ -73,4 +73,11 @@ exports.cmdls = async function (message, msg, speedy, console, kizura , supress)
         if (!message.mentions.members.first()) {const msg = await message.channel.send(`***${message.member.displayName} has a questioning look!***`, {embed: {color: 16758784, image: {url: "https://cdn.discordapp.com/attachments/805999578687471616/815213487928115210/Jett_Q.png"}}})
         supress(msg)}
     }
+    
+    if (msg.startsWith("okman")) { // dont look into this later 
+        message.delete().catch(O_o=>{}); 
+        console.log(`# ${message.author.username} thinks it's okay man, it's okay!`)
+        if (!message.mentions.members.first()) {const msg = await message.channel.send(`***${message.member.displayName} thinks it's okay man, it's okay!***`, {embed: {color: 16758784, image: {url: "https://cdn.discordapp.com/attachments/863620531882426381/899927766026313748/unknown_1.png"}}})
+        supress(msg)}
+    }
 };
