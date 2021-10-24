@@ -12,6 +12,7 @@ exports.taskCmd = async function (command, message, console, args, Discord, task
     message.channel.send(embed).then(function (tmsg) {
       tmsg.react('✋').then(() => tmsg.react('✅').then(() => taskLog[tmsg.id] = embed));
     });
-    }
+    console.log(`${message.author.username} Created a New Task!`);
+  }
 
 };
