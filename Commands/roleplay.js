@@ -129,13 +129,5 @@ exports.rolePlay = async function (command, message, console, random, supress, s
         supress(msg) 
         return
       }
-
-      if (command === "SDGP") {
-        message.delete().catch(O_o => { });
-        console.log(`SDGP Initiated`);
-        var x = FinalCostForModel(PM);
-        const msg = await message.channel.send("the 3d Print costs : " + x + " LKR");
-        return
-      }
     }
 };

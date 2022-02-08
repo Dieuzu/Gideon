@@ -100,7 +100,7 @@ function FinalCostForModel(profitMargin) {     //Total Cost per model (profitMar
 
 ///=============================
 function MachineCost(timeMins) {     //Machine cost (FIND OUT WHERE TIME COMES FROM)
-  var costPerMin = costPerMin (x ,y ,w); // check this and get from here 
+  var costPerMin = CostPerMin(x ,y ,w); // check this and get from here 
   var machineCost = timeMins * costPerMin;
   return machineCost;
 }
@@ -184,12 +184,13 @@ client.on("message", async message => {
 
   //-------------------------------------------- MONKEY TEST
 
-  // if (command === "SDGP") {
-  //   const sayMessage = args.join(" ");
-  //   message.delete().catch(O_o => { });
-  //   var x = FinalCostForModel(PM);
-  //   const km = await message.channel.send("the 3d Print costs : " + x + " LKR");
-  // }
+  if (command === "sdgp") {
+    message.delete().catch(O_o => { });
+    console.log(`SDGP Initiated`);
+    var x = FinalCostForModel(PM);
+    const msg = await message.channel.send("the 3d Print costs : " + x + " LKR");
+    return
+  }
   //--------------------------------------------
 
 });
