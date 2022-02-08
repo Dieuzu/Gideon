@@ -27,7 +27,6 @@ var rt = require('./Boot/reactTask.js');         //
 //Test Space
 var testS = require('./test.js');                //
 
-
 //------------------------------------------------------ Constants
 const { ReactionRole } = require("reaction-role");
 const Discord = require("discord.js");
@@ -49,24 +48,6 @@ let activity = []  ;                  // Initialize activity here, add content a
 let c = 0 ;                           // part of the "there it goes again code"
 let DMActive = new Array();
 let taskLog = [], taskSign = [], taskComp = [];
-// TEST -----------------------
-let t = 1.5; //
-
-let x = 30; //
-let y = 10; //
-let w = 50; //
-
-let a = 4; //
-let b = 2; // 
-
-let s = 6; //
-let z = 1; //
-
-let l = 50; //
-
-let PM = 20;
-
-//Test -------------------------
 //------------------------------------------------------
 act.bootActives(client, console, guildcount, members, activity); //bootactivity.js
 
@@ -89,52 +70,6 @@ function supress(s) {
   }, 180000);
 }
 
-// ----------------TEST TEST ----------------------
-function FinalCostForModel(profitMargin) {     //Total Cost per model (profitMargin)
-  var machineCost = MachineCost(t);
-  var matCost = MaterialCost(s, z)
-  var PPCost =  PostProcessingCost(l)
-  var totalCost = machineCost + matCost + ( PPCost * (1+ (profitMargin/100)));
-  return totalCost;
-}
-
-///=============================
-function MachineCost(timeMins) {     //Machine cost (FIND OUT WHERE TIME COMES FROM)
-  var costPerMin = CostPerMin(x ,y ,w); // check this and get from here 
-  var machineCost = timeMins * costPerMin;
-  return machineCost;
-}
-
-function CostPerMin(depPerMin, costPerElect, powerConsump) {     //Cost per min (comment properly monkey)
-  var costPerMin = depPerMin + ((costPerElect * powerConsump)/60);
-  return costPerMin;
-}
-///=============================
-
-
-function MaterialCost(costMatPerGram, estimatedMass) {     //Machine cost (FIND OUT WHERE TIME COMES FROM)
-  var materialCost = costMatPerGram * estimatedMass;
-  return materialCost;
-}
-
-///=============================
-
-function PostProcessingCost(labourCostPerHour) {     //ppcost cost 
-  var ppTimeInMins = PostProcessingTime(a, b) ;
-  var PPCost = ppTimeInMins * (labourCostPerHour/60);
-  return PPCost;
-}
-
-function PostProcessingTime(supportMatPrintTimeInMins, massOfSupportMatInGrams) {     //pptime IN MIN
-
-  /* 2.1646 ??
-     0.1403 ???
-     -0.404 ??
-  */
-  var PPTime = 2.1646 + (0.1403 * supportMatPrintTimeInMins)+ (-0.404 * massOfSupportMatInGrams);
-  return PPTime;
-}
-// ----------------TEST TEST ----------------------
 //------------------------------------------------------ Messages
 client.on("message", async message => {  
   //--------------------------------- No prefix commands below
@@ -181,17 +116,6 @@ client.on("message", async message => {
   adminc.admin(command, args, message, speedy, kizura, console);
 
   testS.testSpace();
-
-  //-------------------------------------------- MONKEY TEST
-
-  if (command === "sdgp") {
-    message.delete().catch(O_o => { });
-    console.log(`SDGP Initiated`);
-    var x = FinalCostForModel(PM);
-    const msg = await message.channel.send("the 3d Print costs : " + x + " LKR");
-    return
-  }
-  //--------------------------------------------
 
 });
 // Dont Mess Below
