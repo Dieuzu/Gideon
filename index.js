@@ -54,7 +54,7 @@ let t = 1.5; //
 
 let x = 30; //
 let y = 10; //
-let z = 50; //
+let w = 50; //
 
 let a = 4; //
 let b = 2; // 
@@ -100,7 +100,7 @@ function FinalCostForModel(profitMargin) {     //Total Cost per model (profitMar
 
 ///=============================
 function MachineCost(timeMins) {     //Machine cost (FIND OUT WHERE TIME COMES FROM)
-  var costPerMin = costPerMin (x ,y ,z ); // check this and get from here 
+  var costPerMin = costPerMin (x ,y ,w); // check this and get from here 
   var machineCost = timeMins * costPerMin;
   return machineCost;
 }
@@ -184,12 +184,12 @@ client.on("message", async message => {
 
   //-------------------------------------------- MONKEY TEST
 
-  if (command === "SDGP") {
-    const sayMessage = args.join(" ");
-    message.delete().catch(O_o => { });
-    var x = FinalCostForModel(PM);
-    const km = await message.channel.send("the 3d Print costs : " + x + " LKR");
-  }
+  // if (command === "SDGP") {
+  //   const sayMessage = args.join(" ");
+  //   message.delete().catch(O_o => { });
+  //   var x = FinalCostForModel(PM);
+  //   const km = await message.channel.send("the 3d Print costs : " + x + " LKR");
+  // }
   //--------------------------------------------
 
 });
