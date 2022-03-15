@@ -1,2 +1,2 @@
-# Project_HBB
+# Suzie
 JRM Exclusive Discord Bot
